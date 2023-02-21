@@ -16,3 +16,11 @@ class time_machine():
         print('Отправляю ', who, ' в ', where, ' в ', when, ' год')
     def result(self):
         print('Отправление произошло успешно')
+
+a = person()
+b = time_machine()
+who = person.wish(a)
+where = person.place(a, who)
+when = person.time(a, who, where)
+time_machine.request(b, who, where, when)
+time_machine.result(b)
