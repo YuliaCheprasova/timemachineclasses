@@ -18,9 +18,9 @@ class time_machine():
         print('Отправление произошло успешно')
 
 a = person()
-b = time_machine()
+c = time_machine()
 who = person.wish(a)
 where = person.place(a, who)
 when = person.time(a, who, where)
-time_machine.request(b, who, where, when)
-time_machine.result(b)
+time_machine.request(c, who, where, when)
+time_machine.result(c)
