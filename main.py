@@ -1,17 +1,17 @@
 import datetime
 class person():
     def wish(self):
-        print('Я хочу отправить (напишите кого или что) ')
+        print('I want to send (write who or what) ')
         who = input()
         return who
     def place(self, who):
-        print('Хочу отправить ', who, ' в (напишите любую точку мира) ')
+        print('I want to send a ', who, ' to (write anywhere in the world) ')
         where = input()
         return where
     def time(self, who, where):
         while (1):
             print(
-                'Хочу отправить ', who,' в ', where, ' в (напишите в какой день какого года вы хотите его (её) отправить в формате год-месяц-дата, например, 2028-06-09) ')
+                'I want to send a ', who,' to ', where, ' in (write the date you want in the year-month-date format, for example, 2028-06-09) ')
             when = input()
             when = datetime.datetime.strptime(when, '%Y-%m-%d')
             when = when.date()
@@ -21,16 +21,17 @@ class person():
             tdelta = tdelta.days
             if tdelta <= 0:
                 print(
-                    "Скорее всего вы ввели прошедшую дату, обращаем ваше внимание на то, что машина может перемещать объекты только в будущее! Попробуйте снова ")
+                    "You may have entered a past date, please note that the machine can only move objects into the future! Try again, please ")
             else:
                 return tdelta
 class time_machine():
     def request(self, who, where, tdelta):
-        print('Отправляю ', who, ' в ', where, ' на ', str(tdelta), ' дней вперед')
+        print('I am sending a ', who, ' to ', where,' ', str(tdelta), ' days forward')
     def result(self):
-        print('Отправление произошло успешно')
+        print('Sending was successful')
 
 def __main__():
+    print("Pay attention! The time machine moves objects only into the future")
     a = person()
     b = time_machine()
     who = a.wish()
